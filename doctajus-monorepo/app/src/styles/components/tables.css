@@ -1,0 +1,151 @@
+/* Estilos para tablas y componentes de datos tabulares */
+
+/* Tabla básica */
+.table-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Estilo para la cabecera de la tabla */
+.ant-table-thead > tr > th {
+  background-color: #fafafa !important;
+  font-weight: 600 !important;
+  color: rgba(0, 0, 0, 0.85) !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+  transition: background 0.3s ease;
+}
+
+.ant-table-thead > tr > th:hover {
+  background-color: #f0f0f0 !important;
+}
+
+/* Estilo para las filas de la tabla */
+.ant-table-tbody > tr > td {
+  border-bottom: 1px solid #f0f0f0 !important;
+  padding: 12px 16px !important;
+  transition: background 0.3s ease;
+}
+
+/* Hover en las filas */
+.ant-table-tbody > tr:hover > td {
+  background-color: rgba(24, 144, 255, 0.05) !important;
+}
+
+/* Fila activa/seleccionada */
+.ant-table-tbody > tr.ant-table-row-selected > td {
+  background-color: rgba(24, 144, 255, 0.1) !important;
+}
+
+/* Estilo para controles de ordenación */
+.ant-table-column-sorter {
+  color: rgba(0, 0, 0, 0.45) !important;
+}
+
+.ant-table-column-sorter-up.active,
+.ant-table-column-sorter-down.active {
+  color: #1890ff !important;
+}
+
+/* Estilo para las celdas expandibles */
+.ant-table-row-expand-icon {
+  border-color: #d9d9d9 !important;
+  transition: all 0.3s ease;
+}
+
+.ant-table-row-expand-icon:hover {
+  color: #1890ff !important;
+  border-color: #1890ff !important;
+}
+
+/* Estilo para filas anidadas */
+.ant-table-expanded-row > td {
+  background-color: #fafafa !important;
+  padding: 16px 48px !important;
+}
+
+/* Estilo para la cabecera fija */
+.ant-table-header {
+  background-color: #fff !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+}
+
+/* Estilo para la paginación */
+.ant-pagination {
+  margin: 16px 0 !important;
+  text-align: right !important;
+}
+
+.ant-pagination-item {
+  border-radius: 4px !important;
+  transition: all 0.3s ease;
+}
+
+.ant-pagination-item-active {
+  background-color: #1890ff !important;
+  border-color: #1890ff !important;
+}
+
+.ant-pagination-item-active a {
+  color: #fff !important;
+}
+
+/* Estilos para los botones de filtrado */
+.ant-table-filter-trigger {
+  color: rgba(0, 0, 0, 0.45) !important;
+  transition: color 0.3s ease;
+}
+
+.ant-table-filter-trigger:hover,
+.ant-table-filter-trigger-container-open .ant-table-filter-trigger {
+  color: #1890ff !important;
+}
+
+/* Estilos para los menús de filtrado */
+.ant-table-filter-dropdown {
+  border-radius: 4px !important;
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Estilo para celdas personalizadas */
+.table-cell-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.table-cell-status-active {
+  color: #52c41a;
+}
+
+.table-cell-status-inactive {
+  color: #bfbfbf;
+}
+
+.table-cell-status-warning {
+  color: #faad14;
+}
+
+.table-cell-status-error {
+  color: #f5222d;
+}
+
+/* Estilos para tabla responsive */
+@media (max-width: 768px) {
+  .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ant-table {
+    min-width: 650px;
+  }
+
+  .table-cell-actions {
+    flex-wrap: wrap;
+  }
+}

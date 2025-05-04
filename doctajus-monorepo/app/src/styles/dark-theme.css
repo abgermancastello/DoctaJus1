@@ -1,0 +1,669 @@
+/* DOCTAJUS - Tema Oscuro */
+
+/* Variables de color para el tema oscuro */
+:root[data-theme="dark"] {
+  /* Colores primarios */
+  --primary-color: #177ddc;
+  --primary-color-light: #1f6bc2;
+  --primary-color-dark: #0050b3;
+  --secondary-color: #0e8a8a;
+  --accent-color: #7a6cb0;
+
+  /* Colores de estado */
+  --success-color: #49aa19;
+  --warning-color: #d89614;
+  --danger-color: #a61d24;
+
+  /* Textos */
+  --text-primary: #ffffff;
+  --text-secondary: #a6a6a6;
+  --text-disabled: #595959;
+
+  /* Fondos */
+  --bg-default: #0d1117;
+  --bg-light: #141414;
+  --bg-white: #1f1f1f;
+  --bg-paper: #1f1f1f;
+  --bg-content: #1f1f1f;
+  --bg-sidebar: #000c17;
+
+  /* Bordes y sombras */
+  --border-color: #303030;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+}
+
+/* Configuración básica */
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* Estilos generales */
+[data-theme="dark"] body {
+  background-color: var(--bg-default);
+  color: var(--text-primary);
+}
+
+/* Layout */
+[data-theme="dark"] .ant-layout {
+  background-color: var(--bg-default);
+}
+
+[data-theme="dark"] .ant-layout-header {
+  background-color: var(--bg-white);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .ant-layout-content {
+  background-color: var(--bg-content);
+}
+
+[data-theme="dark"] .ant-layout-sider {
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border-color);
+}
+
+/* Estilos generales de texto */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] span,
+[data-theme="dark"] div,
+[data-theme="dark"] li,
+[data-theme="dark"] td {
+  color: var(--text-primary);
+}
+
+/* Dashboard específico */
+[data-theme="dark"] .dashboard-page {
+  background-color: var(--bg-default);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .content {
+  background-color: var(--bg-content) !important;
+}
+
+/* Tarjetas del Dashboard */
+[data-theme="dark"] .widget-container {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
+}
+
+/* Ajustes para gráficos y tarjetas específicas */
+[data-theme="dark"] .ant-card {
+  background-color: var(--bg-white);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .ant-card-bordered {
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .ant-card-head {
+  border-bottom-color: var(--border-color);
+}
+
+/* Modales y Popups */
+[data-theme="dark"] .ant-modal-content,
+[data-theme="dark"] .ant-modal-header {
+  background-color: var(--bg-white);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .ant-modal-footer {
+  border-top-color: var(--border-color);
+}
+
+[data-theme="dark"] .ant-modal-title {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .ant-modal-close-icon {
+  color: var(--text-secondary);
+}
+
+/* Formularios */
+[data-theme="dark"] .ant-input,
+[data-theme="dark"] .ant-input-number,
+[data-theme="dark"] .ant-select-selector,
+[data-theme="dark"] .ant-picker {
+  background-color: var(--bg-light);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .ant-input-affix-wrapper {
+  background-color: var(--bg-light);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .ant-input-affix-wrapper input {
+  background-color: transparent;
+}
+
+[data-theme="dark"] .ant-form-item-label > label {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .ant-form-item {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .ant-form-item-explain-error {
+  color: var(--danger-color);
+}
+
+/* Tabla */
+[data-theme="dark"] .ant-table {
+  background-color: var(--bg-white);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .ant-table-thead > tr > th {
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+  border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .ant-table-tbody > tr > td {
+  border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .ant-table-tbody > tr:hover > td {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .ant-pagination-item {
+  background-color: var(--bg-light);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .ant-pagination-item a {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .ant-pagination-item-active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Menu */
+[data-theme="dark"] .ant-menu-dark {
+  background-color: var(--bg-sidebar);
+}
+
+[data-theme="dark"] .ant-menu-light {
+  background-color: var(--bg-white);
+  color: var(--text-primary);
+  border-right-color: var(--border-color);
+}
+
+[data-theme="dark"] .ant-menu-item-selected {
+  background-color: var(--primary-color) !important;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .ant-menu-light .ant-menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Tabs */
+[data-theme="dark"] .ant-tabs-tab {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .ant-tabs-tab:hover {
+  color: var(--primary-color);
+}
+
+[data-theme="dark"] .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--primary-color);
+}
+
+[data-theme="dark"] .ant-tabs-ink-bar {
+  background-color: var(--primary-color);
+}
+
+/* Badges y etiquetas */
+[data-theme="dark"] .ant-badge-count {
+  background-color: var(--danger-color);
+}
+
+[data-theme="dark"] .ant-tag {
+  background-color: var(--bg-light);
+  border-color: var(--border-color);
+}
+
+/* Estados de alerta/notificación */
+[data-theme="dark"] .ant-alert-info {
+  background-color: rgba(24, 144, 255, 0.1);
+  border-color: rgba(24, 144, 255, 0.3);
+}
+
+[data-theme="dark"] .ant-alert-success {
+  background-color: rgba(82, 196, 26, 0.1);
+  border-color: rgba(82, 196, 26, 0.3);
+}
+
+[data-theme="dark"] .ant-alert-warning {
+  background-color: rgba(250, 173, 20, 0.1);
+  border-color: rgba(250, 173, 20, 0.3);
+}
+
+[data-theme="dark"] .ant-alert-error {
+  background-color: rgba(245, 34, 45, 0.1);
+  border-color: rgba(245, 34, 45, 0.3);
+}
+
+/* Ajustes para tarjetas específicas del dashboard */
+[data-theme="dark"] .ant-layout-content {
+  background-color: var(--bg-default) !important;
+}
+
+[data-theme="dark"] .dashboard-page {
+  background-color: var(--bg-default) !important;
+}
+
+/* Estilos para las tarjetas de información */
+[data-theme="dark"] .dashboard-personalizable,
+[data-theme="dark"] .site-layout {
+  background-color: var(--bg-default);
+}
+
+[data-theme="dark"] .dashboard-personalizable h2,
+[data-theme="dark"] .dashboard-personalizable h3 {
+  color: var(--text-primary);
+}
+
+/* Estilos para título principal de Dashboard */
+[data-theme="dark"] .dashboard-header h2,
+[data-theme="dark"] .dashboard-personalizable h2,
+[data-theme="dark"] h1,
+[data-theme="dark"] h2 {
+  color: var(--text-primary);
+}
+
+/* Subtítulos y descripciones */
+[data-theme="dark"] .dashboard-header p,
+[data-theme="dark"] .dashboard-personalizable p,
+[data-theme="dark"] .ant-typography {
+  color: var(--text-secondary);
+}
+
+/* Estilos para los widgets del dashboard */
+[data-theme="dark"] .widget-container {
+  background-color: #1a1d21;
+  border: 1px solid #2d3339;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para tarjetas específicas en modo oscuro */
+[data-theme="dark"] .expedientes-widget {
+  background-color: rgba(23, 125, 220, 0.15);
+}
+
+[data-theme="dark"] .tareas-widget {
+  background-color: rgba(216, 150, 20, 0.15);
+}
+
+[data-theme="dark"] .documentos-widget {
+  background-color: rgba(73, 170, 25, 0.15);
+}
+
+[data-theme="dark"] .ingresos-widget {
+  background-color: rgba(23, 196, 113, 0.15);
+}
+
+/* Textos en las tarjetas */
+[data-theme="dark"] .widget-container h3,
+[data-theme="dark"] .widget-container .ant-card-head-title {
+  color: var(--text-primary);
+}
+
+/* Estadísticas en tarjetas */
+[data-theme="dark"] .widget-container .ant-statistic-content {
+  color: white;
+}
+
+[data-theme="dark"] .widget-container .ant-statistic-title {
+  color: var(--text-secondary);
+}
+
+/* Enlaces en tarjetas */
+[data-theme="dark"] .widget-container a {
+  color: var(--primary-color);
+}
+
+/* Estilos para las categorías */
+[data-theme="dark"] .category-urgente {
+  background: rgba(166, 29, 36, 0.2);
+  color: #ff7875;
+  border: 1px solid #a61d24;
+}
+
+[data-theme="dark"] .category-importante {
+  background: rgba(216, 150, 20, 0.2);
+  color: #ffd666;
+  border: 1px solid #d89614;
+}
+
+[data-theme="dark"] .category-general {
+  background: rgba(23, 125, 220, 0.2);
+  color: #69c0ff;
+  border: 1px solid #177ddc;
+}
+
+/* Textos de la página Dashboard */
+[data-theme="dark"] #dashboard-title,
+[data-theme="dark"] .dashboard-title {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] #dashboard-subtitle,
+[data-theme="dark"] .dashboard-subtitle {
+  color: var(--text-secondary);
+}
+
+/* Estilos para los textos y valores en dashboards */
+[data-theme="dark"] .ant-typography {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .ant-typography.ant-typography-secondary {
+  color: var(--text-secondary);
+}
+
+/* Ajustes para el contenido principal */
+[data-theme="dark"] .ant-layout-content > div {
+  background-color: var(--bg-default) !important;
+  color: var(--text-primary);
+}
+
+/* Ajustes específicos para textos en tarjetas */
+[data-theme="dark"] .expedientes-activos,
+[data-theme="dark"] .tareas-pendientes,
+[data-theme="dark"] .documentos-total,
+[data-theme="dark"] .ingresos-mes {
+  color: white;
+  font-weight: 600;
+}
+
+/* Ajustes para valores numéricos y estadísticas */
+[data-theme="dark"] .valor-estadistica,
+[data-theme="dark"] .valor-numero {
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* Ajustes para información secundaria */
+[data-theme="dark"] .info-secundaria,
+[data-theme="dark"] .etiqueta-widget {
+  color: var(--text-secondary);
+}
+
+/* Links específicos en tarjetas */
+[data-theme="dark"] .ver-todos-link,
+[data-theme="dark"] .gestionar-documentos-link,
+[data-theme="dark"] .ver-finanzas-link {
+  color: var(--primary-color);
+}
+
+/* Colores específicos para indicadores */
+[data-theme="dark"] .indicador-positivo {
+  color: var(--success-color);
+}
+
+[data-theme="dark"] .indicador-negativo {
+  color: var(--danger-color);
+}
+
+/* Estilos para gráficos */
+[data-theme="dark"] .recharts-text {
+  fill: var(--text-secondary);
+}
+
+[data-theme="dark"] .recharts-cartesian-axis-line,
+[data-theme="dark"] .recharts-cartesian-axis-tick-line,
+[data-theme="dark"] .recharts-cartesian-grid-horizontal line,
+[data-theme="dark"] .recharts-cartesian-grid-vertical line {
+  stroke: var(--border-color);
+}
+
+/* Estilos para el botón de tema */
+[data-theme="dark"] .theme-toggle-btn {
+  color: var(--text-primary);
+}
+
+/* Personalización de scrollbars para modo oscuro */
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Tooltips y popovers */
+[data-theme="dark"] .ant-tooltip-inner {
+  background-color: #2a2a2a;
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .ant-popover-inner {
+  background-color: var(--bg-white);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .ant-popover-arrow-content {
+  background-color: var(--bg-white);
+}
+
+/* Ajustes para contenedores específicos */
+[data-theme="dark"] .site-header {
+  background-color: var(--bg-white) !important;
+}
+
+[data-theme="dark"] .sidebar-logo {
+  background-color: var(--bg-sidebar);
+}
+
+/* Ajustes específicos para el Dashboard */
+[data-theme="dark"] .dashboard-tabs .ant-tabs-tab {
+  background-color: transparent;
+}
+
+[data-theme="dark"] .dashboard-tabs .ant-tabs-tab-active {
+  background-color: var(--primary-color);
+}
+
+[data-theme="dark"] .dashboard-tabs .ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: white !important;
+}
+
+/* Estilos específicos para corregir texto en modo oscuro */
+[data-theme="dark"] *::placeholder {
+  color: var(--text-disabled);
+}
+
+/* Estilos para forzar el color de texto en títulos y subtítulos */
+[data-theme="dark"] .ant-typography,
+[data-theme="dark"] .ant-typography h1,
+[data-theme="dark"] .ant-typography h2,
+[data-theme="dark"] .ant-typography h3,
+[data-theme="dark"] .ant-typography h4 {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .ant-typography.ant-typography-secondary {
+  color: var(--text-secondary) !important;
+}
+
+/* Forzar colores de texto para elementos específicos */
+[data-theme="dark"] p,
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] span,
+[data-theme="dark"] div {
+  color: var(--text-primary);
+}
+
+/* Estilos específicos para textos en Dashboard */
+[data-theme="dark"] .dashboard-page h1,
+[data-theme="dark"] .dashboard-page h2,
+[data-theme="dark"] .dashboard-page h3,
+[data-theme="dark"] .dashboard-page .titulo-pagina,
+[data-theme="dark"] .dashboard-title {
+  color: white !important;
+}
+
+[data-theme="dark"] .dashboard-page p,
+[data-theme="dark"] .dashboard-page .subtitulo-pagina,
+[data-theme="dark"] .dashboard-subtitle {
+  color: var(--text-secondary) !important;
+}
+
+/* Estilos específicos para los textos del dashboard */
+[data-theme="dark"] .dashboard-card-title {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .dashboard-card .ant-statistic-content-value {
+  color: white !important;
+}
+
+[data-theme="dark"] .dashboard-header h2 {
+  color: white !important;
+}
+
+[data-theme="dark"] .widget-container h3 {
+  color: white !important;
+}
+
+/* Forzar color en elementos de texto específicos */
+[data-theme="dark"] .text-primary {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+/* Números y textos importantes */
+[data-theme="dark"] .big-number,
+[data-theme="dark"] .valor-grande {
+  color: white !important;
+  font-weight: bold !important;
+}
+
+[data-theme="dark"] .dashboard-card .ant-card-body {
+  background-color: var(--bg-white) !important;
+}
+
+/* Resumen de actividad y estadísticas específico */
+[data-theme="dark"] .ant-typography {
+  color: var(--text-primary) !important;
+}
+
+/* Efectos y animaciones para modo oscuro */
+@keyframes glowAnimation {
+  0% {
+    box-shadow: 0 0 5px rgba(23, 125, 220, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(23, 125, 220, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(23, 125, 220, 0.5);
+  }
+}
+
+[data-theme="dark"] .focused-element {
+  animation: glowAnimation 2s infinite;
+}
+
+/* Mejoras adicionales para tarjetas del dashboard */
+[data-theme="dark"] .dashboard-title,
+[data-theme="dark"] h1.dashboard-title,
+[data-theme="dark"] h2.dashboard-title {
+  color: white !important;
+  font-size: 2rem !important;
+  font-weight: 600 !important;
+}
+
+/* Mejoras para los números en tarjetas */
+[data-theme="dark"] .numero-grande,
+[data-theme="dark"] .valor-grande,
+[data-theme="dark"] .ant-statistic-content-value-int {
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 2rem !important;
+}
+
+/* Mejoras específicas para texto "Resumen de actividad y estadísticas" */
+[data-theme="dark"] .dashboard-subtitle,
+[data-theme="dark"] p.dashboard-subtitle,
+[data-theme="dark"] span.dashboard-subtitle {
+  color: #a6a6a6 !important;
+  font-size: 1rem !important;
+}
+
+/* Mejoras para textos específicos en widgets */
+[data-theme="dark"] .widget-container .titulo-widget {
+  color: white !important;
+  font-weight: 500 !important;
+}
+
+[data-theme="dark"] .widget-container .valor-widget {
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 1.5rem !important;
+}
+
+/* Mejoras para enlaces específicos y textos secundarios */
+[data-theme="dark"] .widget-container a:hover {
+  color: #40a9ff !important;
+  text-decoration: underline;
+}
+
+[data-theme="dark"] .widget-container .texto-secundario {
+  color: #a6a6a6 !important;
+}
+
+/* Forzar colores para textos de títulos específicos */
+[data-theme="dark"] .ant-typography[title="Dashboard"],
+[data-theme="dark"] .titulo-dashboard,
+[data-theme="dark"] h1#dashboard-title,
+[data-theme="dark"] h2#dashboard-title {
+  color: white !important;
+}
+
+/* Asegurar que los textos de encabezado sean siempre visibles */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: white !important;
+}

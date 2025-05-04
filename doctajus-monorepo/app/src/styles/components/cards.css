@@ -1,0 +1,127 @@
+/* Estilos para tarjetas y paneles */
+
+/* Estilos básicos para tarjetas */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para tarjeta del Dashboard */
+.dashboard-card {
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Variantes de colores para tarjetas */
+.card-primary {
+  border-top: 3px solid #1890ff;
+}
+
+.card-success {
+  border-top: 3px solid #52c41a;
+}
+
+.card-warning {
+  border-top: 3px solid #faad14;
+}
+
+.card-danger {
+  border-top: 3px solid #f5222d;
+}
+
+/* Estilos para cabeceras de tarjetas */
+.card-header {
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.card-subtitle {
+  margin: 4px 0 0 0;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Estilos para cuerpo de tarjetas */
+.card-body {
+  padding: 16px;
+}
+
+.card-content {
+  margin-bottom: 16px;
+}
+
+/* Animaciones para tarjetas */
+.card-animated {
+  transition: all 0.3s ease-in-out;
+}
+
+.card-animated:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para tarjetas de estadísticas */
+.stats-card {
+  padding: 16px;
+}
+
+.stats-card-value {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 0.85);
+  margin-bottom: 4px;
+}
+
+.stats-card-title {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.65);
+  margin: 0;
+}
+
+.stats-card-comparison {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.stats-up {
+  color: #52c41a;
+}
+
+.stats-down {
+  color: #f5222d;
+}
+
+/* Estilos para pie de tarjetas */
+.card-footer {
+  padding: 12px 16px;
+  border-top: 1px solid #f0f0f0;
+  background-color: #fafafa;
+  border-radius: 0 0 8px 8px;
+}

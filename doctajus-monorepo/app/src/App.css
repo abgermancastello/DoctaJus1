@@ -1,0 +1,2128 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #2a3f54;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 1.5rem;
+}
+
+.nav-links a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #f5f5f5;
+}
+
+.page {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos para header de página con botón */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.page-header h1 {
+  margin: 0;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Estilos para filtros */
+.filters-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.search-container {
+  flex: 1;
+  min-width: 250px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+}
+
+.filter-select {
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  background-color: white;
+}
+
+.filter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Botones */
+.btn-primary {
+  padding: 0.6rem 1.2rem;
+  background-color: #2a3f54;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #1c2b3a;
+}
+
+.btn-retry {
+  padding: 0.6rem 1.2rem;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-retry:hover {
+  background-color: #e0e0e0;
+}
+
+/* Estado de carga */
+.loading-overlay {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* Estado vacío */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  text-align: center;
+  color: #666;
+}
+
+.error-container {
+  padding: 1rem;
+  background-color: #fff5f5;
+  border: 1px solid #ffcccc;
+  border-radius: 4px;
+  color: #d32f2f;
+  margin-top: 1rem;
+}
+
+/* Dashboard styles */
+.dashboard-section {
+  margin-bottom: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-section h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-top: 4px solid #3498db;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 0.5rem 0;
+}
+
+.stat-card.warning {
+  border-top-color: #e67e22;
+}
+
+.stat-card.alert {
+  border-top-color: #e74c3c;
+}
+
+.stat-card.success {
+  border-top-color: #2ecc71;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Expedientes styles */
+.expedientes-list {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.expediente-item {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #2a3f54;
+}
+
+.expediente-item h3 {
+  margin-top: 0;
+}
+
+.estado {
+  font-weight: bold;
+}
+
+/* Tareas styles */
+.tareas-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.tarea-item {
+  position: relative;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarea-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.tarea-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.tarea-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+  flex: 1;
+}
+
+.tarea-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Estilos para el botón de editar */
+.edit-button {
+  background-color: #e3f2fd !important;
+  color: #1976d2 !important;
+  border-color: #bbdefb !important;
+  font-weight: 500 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  padding: 5px 10px !important;
+  transition: all 0.3s ease !important;
+}
+
+.edit-button:hover {
+  background-color: #2196f3 !important;
+  color: white !important;
+  border-color: #1976d2 !important;
+}
+
+.edit-button:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+}
+
+.edit-button .anticon {
+  font-size: 14px !important;
+}
+
+/* Estilos para el botón de eliminar */
+.delete-button {
+  background-color: #ffebee !important;
+  color: #e53935 !important;
+  border-color: #ffcdd2 !important;
+  font-weight: 500 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  padding: 5px 10px !important;
+  transition: all 0.3s ease !important;
+}
+
+.delete-button:hover {
+  background-color: #ef5350 !important;
+  color: white !important;
+  border-color: #e53935 !important;
+}
+
+.delete-button:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+}
+
+.delete-button .anticon {
+  font-size: 14px !important;
+}
+
+.fecha {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.estado {
+  font-size: 0.9rem;
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.estado-pendiente {
+  background-color: #fff8e1;
+  color: #f57c00;
+}
+
+.estado-en-progreso {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.estado-completada {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.estado-cancelada {
+  background-color: #f5f5f5;
+  color: #757575;
+}
+
+.descripcion {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+/* Estados de prioridad */
+.prioridad-alta {
+  border-left: 4px solid #e74c3c;
+}
+
+.prioridad-media {
+  border-left: 4px solid #f39c12;
+}
+
+.prioridad-baja {
+  border-left: 4px solid #3498db;
+}
+
+/* Perfil styles */
+.perfil-info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.perfil-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2a3f54;
+}
+
+.avatar-placeholder {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.perfil-detalles {
+  flex: 1;
+}
+
+.perfil-detalles h3 {
+  margin-top: 0;
+}
+
+.perfil-opciones {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-perfil {
+  padding: 0.6rem 1.2rem;
+  background-color: #2a3f54;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-perfil:hover {
+  background-color: #1c2b3a;
+}
+
+/* Login styles */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-header h1 {
+  color: #2a3f54;
+  margin-bottom: 0.5rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.login-button {
+  padding: 0.8rem;
+  background-color: #2a3f54;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #1c2b3a;
+}
+
+.login-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #ff5252;
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+}
+
+/* Mensaje de desarrollo */
+.dev-notice {
+  background-color: #fffde7;
+  border: 1px dashed #ffd54f;
+  border-radius: 4px;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.dev-notice p {
+  margin: 0.3rem 0;
+  color: #5d4037;
+}
+
+.dev-notice p:first-child {
+  font-weight: bold;
+  color: #f57f17;
+}
+
+/* Estilos de notificaciones */
+.notifications-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  max-width: 350px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.notification-enter {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.notification-exit {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.notification-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-content {
+  flex: 1;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.notification-close {
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.notification-close:hover {
+  opacity: 1;
+}
+
+/* Colores para los tipos de notificación */
+.notification-success .notification-icon {
+  color: #2e7d32;
+}
+
+.notification-error .notification-icon {
+  color: #d32f2f;
+}
+
+.notification-warning .notification-icon {
+  color: #ef6c00;
+}
+
+.notification-info .notification-icon {
+  color: #0277bd;
+}
+
+/* Estilos del modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+}
+
+.modal-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: modal-appear 0.3s ease;
+}
+
+@keyframes modal-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #2a3f54;
+}
+
+.modal-close-button {
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #666;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.modal-close-button:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.modal-content {
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+.modal-cancel-button {
+  padding: 0.6rem 1.2rem;
+  background-color: #f5f5f5;
+  color: #666;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.modal-cancel-button:hover {
+  background-color: #eee;
+}
+
+.modal-confirm-button {
+  padding: 0.6rem 1.2rem;
+  background-color: #2a3f54;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.modal-confirm-button:hover {
+  background-color: #1c2b3a;
+}
+
+/* Estilos del Calendario */
+.calendario-container {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.calendario-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.calendario-header h1 {
+  margin: 0;
+  color: #333;
+}
+
+.calendario-filtros {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.filtro-grupo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.filtro-grupo label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.calendario-wrapper {
+  height: 700px;
+}
+
+/* Sobrescribir estilos de react-big-calendar */
+.rbc-calendar {
+  font-family: inherit;
+}
+
+.rbc-header {
+  padding: 10px 3px;
+  background-color: #f5f5f5;
+  font-weight: 500;
+}
+
+.rbc-event {
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.rbc-today {
+  background-color: rgba(66, 133, 244, 0.1);
+}
+
+.rbc-toolbar button {
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.rbc-toolbar button.rbc-active {
+  background-color: #2a3f54;
+  color: white;
+  border-color: #2a3f54;
+}
+
+.rbc-toolbar button:hover {
+  background-color: #f0f0f0;
+}
+
+.rbc-toolbar button.rbc-active:hover {
+  background-color: #1c2b3a;
+}
+
+.modal-placeholder {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-placeholder p {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para formularios */
+.form-control {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  background-color: white;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-row .form-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Botones adicionales para modal */
+.modal-delete-button {
+  padding: 0.6rem 1.2rem;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: auto;
+}
+
+.modal-delete-button:hover {
+  background-color: #d32f2f;
+}
+
+/* Estilos para Tesorería */
+.tesoreria-page {
+  padding: 20px;
+}
+
+/* Modificadores para las secciones del dashboard */
+.dashboard-section-success {
+  border-top-color: #2ecc71;
+}
+
+.dashboard-section-alert {
+  border-top-color: #e74c3c;
+}
+
+/* Estilos para el resumen financiero */
+.resumen-financiero {
+  margin-bottom: 2rem;
+}
+
+.stat-ingresos {
+  color: #27ae60;
+}
+
+.stat-egresos {
+  color: #c0392b;
+}
+
+.stat-pendientes {
+  color: #f39c12;
+}
+
+.stat-description {
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+/* Estilos para los filtros */
+.filtros-container {
+  margin-bottom: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.filtros-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.filtros-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.btn-reset-filtros {
+  background: none;
+  border: none;
+  color: #3498db;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.filtros-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filtro-grupo {
+  flex: 1;
+  min-width: 150px;
+}
+
+.filtro-grupo label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.filtro-control {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  background-color: white;
+}
+
+.busqueda-grupo {
+  flex: 2;
+}
+
+.filtro-acciones {
+  display: flex;
+  align-items: flex-end;
+}
+
+.btn-aplicar-filtros {
+  padding: 0.6rem 1.2rem;
+  background-color: #2a3f54;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-aplicar-filtros:hover {
+  background-color: #1c2b3a;
+}
+
+/* Estilos para la tabla de movimientos */
+.tabla-movimientos-container {
+  margin-top: 1.5rem;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.tabla-responsive {
+  overflow-x: auto;
+}
+
+.tabla-movimientos {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.tabla-movimientos th,
+.tabla-movimientos td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.tabla-movimientos th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+  color: #555;
+}
+
+.tabla-movimientos td.monto {
+  font-weight: 600;
+}
+
+.movimiento-ingreso td.monto {
+  color: #27ae60;
+}
+
+.movimiento-egreso td.monto {
+  color: #c0392b;
+}
+
+.movimiento-pendiente {
+  background-color: #fffde7;
+}
+
+.movimiento-anulado {
+  background-color: #f9f9f9;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.estado-completado {
+  color: #27ae60;
+  font-weight: 600;
+}
+
+.estado-pendiente {
+  color: #f39c12;
+  font-weight: 600;
+}
+
+.estado-anulado {
+  color: #999;
+  font-weight: 600;
+}
+
+/* Botones de acción en la tabla */
+.btn-accion {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-editar {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-editar:hover {
+  background-color: #2980b9;
+}
+
+.btn-secondary:hover {
+  background-color: #dee2e6;
+}
+
+/* Estilos para el Dashboard Financiero */
+.dashboard-financiero {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.selector-periodo {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  font-size: 14px;
+}
+
+/* Estilos para KPIs */
+.kpis-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.kpi-card {
+  flex: 1;
+  min-width: 200px;
+  padding: 16px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.kpi-card h3 {
+  margin-top: 0;
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+}
+
+.kpi-valor {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.valor-positivo {
+  color: #4CAF50;
+}
+
+.valor-negativo {
+  color: #F44336;
+}
+
+.kpi-tendencia {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.indicador-positivo {
+  color: #4CAF50;
+}
+
+.indicador-negativo {
+  color: #F44336;
+}
+
+/* Estilos para gráficos */
+.grafico-seccion {
+  margin-bottom: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.grafico-seccion h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: #555;
+}
+
+.grafico-container {
+  height: 300px;
+  width: 100%;
+}
+
+.graficos-flex {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.grafico-mitad {
+  flex: 1;
+  min-width: 300px;
+}
+
+@media (max-width: 768px) {
+  .kpis-container {
+    flex-direction: column;
+  }
+
+  .graficos-flex {
+    flex-direction: column;
+  }
+
+  .grafico-mitad {
+    width: 100%;
+  }
+}
+
+/* Estilos para Facturación */
+.facturas-page {
+  padding: 20px;
+}
+
+.facturas-resumen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.resumen-card {
+  flex: 1;
+  min-width: 200px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.resumen-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.resumen-valor {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.resumen-alerta {
+  color: #e74c3c;
+}
+
+.resumen-exito {
+  color: #27ae60;
+}
+
+/* Nuevos estilos para gestión avanzada de cobros */
+.alertas-container {
+  margin-bottom: 20px;
+}
+
+.alerta-vencimiento {
+  background-color: #fff3e0;
+  padding: 15px;
+  border-left: 4px solid #ff9800;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.alerta-vencimiento h3 {
+  margin: 0;
+  color: #e65100;
+  font-size: 1.1rem;
+  flex: 1 0 100%;
+}
+
+.alerta-vencimiento p {
+  margin: 0;
+  color: #333;
+  flex: 1;
+}
+
+.btn-alerta {
+  padding: 8px 12px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.btn-alerta:hover {
+  background-color: #f57c00;
+}
+
+.acciones-lote {
+  background-color: #e3f2fd;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.acciones-lote h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #0d47a1;
+}
+
+.acciones-botones {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-accion-lote {
+  padding: 8px 12px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.btn-accion-lote:hover {
+  background-color: #1976d2;
+}
+
+/* Estilos para plan de pago */
+.plan-pago-container {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-left: 4px solid #3498db;
+}
+
+.plan-pago-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.plan-pago-header h3 {
+  margin: 0;
+  color: #2980b9;
+}
+
+.plan-pago-info {
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.plan-pago-cuotas {
+  background-color: white;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cuota-row {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+.cuota-row:last-child {
+  border-bottom: none;
+}
+
+.cuota-row.pagada {
+  background-color: #e8f5e9;
+}
+
+.cuota-row.vencida {
+  background-color: #ffebee;
+}
+
+.cuota-numero {
+  width: 50px;
+  font-weight: 600;
+}
+
+.cuota-fecha {
+  flex: 1;
+}
+
+.cuota-monto {
+  flex: 1;
+  text-align: right;
+  font-weight: 600;
+}
+
+.cuota-estado {
+  width: 100px;
+  text-align: center;
+}
+
+.cuota-acciones {
+  width: 100px;
+  text-align: right;
+}
+
+.badge-pendiente {
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.badge-pagada {
+  background-color: #e8f5e9;
+  color: #1b5e20;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.badge-vencida {
+  background-color: #ffebee;
+  color: #b71c1c;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.btn-pagar-cuota {
+  padding: 5px 8px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.btn-pagar-cuota:hover {
+  background-color: #388e3c;
+}
+
+.dias-mora {
+  display: inline-block;
+  background-color: #fff3e0;
+  color: #e65100;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+/* Estilos para recordatorios */
+.recordatorios-list {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.recordatorio-item {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+}
+
+.recordatorio-item:last-child {
+  border-bottom: none;
+}
+
+.recordatorio-fecha {
+  width: 150px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.recordatorio-tipo {
+  width: 100px;
+}
+
+.recordatorio-mensaje {
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.recordatorio-estado {
+  width: 100px;
+  text-align: center;
+}
+
+.tipo-email {
+  color: #3498db;
+}
+
+.tipo-sms {
+  color: #9b59b6;
+}
+
+.tipo-llamada {
+  color: #e74c3c;
+}
+
+.badge-enviado {
+  background-color: #e8f5e9;
+  color: #1b5e20;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.badge-pendiente {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.badge-fallido {
+  background-color: #ffebee;
+  color: #b71c1c;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+/* Estilos para el listado de facturas en recordatorios */
+.facturas-seleccionadas {
+  margin-bottom: 20px;
+}
+
+.facturas-lista {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.factura-item {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.factura-item:last-child {
+  border-bottom: none;
+}
+
+.factura-item.recordatorio-enviado {
+  background-color: #f0f8ff;
+}
+
+.factura-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex: 1;
+}
+
+.factura-numero {
+  font-weight: 600;
+  width: 100px;
+}
+
+.factura-cliente {
+  flex: 2;
+}
+
+.factura-monto {
+  flex: 1;
+  font-weight: 600;
+  text-align: right;
+}
+
+.factura-fecha {
+  width: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.recordatorio-status {
+  color: #27ae60;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.success-container {
+  background-color: #e8f5e9;
+  color: #1b5e20;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
+.error-container {
+  background-color: #ffebee;
+  color: #b71c1c;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
+.factura-info-container {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.factura-info-container h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.input-help {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+.plan-info-message {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.plan-pago-modal,
+.recordatorios-modal {
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+}
+
+/* Responsive para gestión de cobros */
+@media (max-width: 768px) {
+  .alerta-vencimiento {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .alerta-vencimiento p {
+    flex: 1 0 100%;
+  }
+
+  .cuota-row {
+    flex-wrap: wrap;
+  }
+
+  .cuota-acciones {
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+  }
+
+  .recordatorio-item {
+    flex-wrap: wrap;
+  }
+
+  .recordatorio-fecha,
+  .recordatorio-tipo,
+  .recordatorio-estado {
+    margin-bottom: 5px;
+  }
+
+  .recordatorio-mensaje {
+    flex: 1 0 100%;
+    margin-bottom: 5px;
+  }
+
+  .factura-info {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+/* Estilos para tabla de facturas */
+.tabla-facturas-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.tabla-responsive {
+  overflow-x: auto;
+}
+
+.tabla-facturas {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-facturas th,
+.tabla-facturas td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.tabla-facturas th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+}
+
+.tabla-facturas tr:hover {
+  background-color: #f8f9fb;
+}
+
+.tabla-facturas .monto {
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Estados de facturas */
+.estado {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.estado-borrador {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.estado-emitida {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+}
+
+.estado-pagada {
+  background-color: #e8f5e9;
+  color: #1b5e20;
+}
+
+.estado-vencida {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+.estado-anulada {
+  background-color: #f5f5f5;
+  color: #757575;
+  text-decoration: line-through;
+}
+
+.vencimiento-alerta {
+  color: #e74c3c;
+  font-weight: 500;
+}
+
+.factura-vencida {
+  background-color: #fff8e1;
+}
+
+/* Botones de acción */
+.acciones-container {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.btn-accion {
+  padding: 5px 8px;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-ver {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.btn-ver:hover {
+  background-color: #dee2e6;
+}
+
+.btn-emitir {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+}
+
+.btn-emitir:hover {
+  background-color: #bbdefb;
+}
+
+.btn-pagar {
+  background-color: #e8f5e9;
+  color: #1b5e20;
+}
+
+.btn-pagar:hover {
+  background-color: #c8e6c9;
+}
+
+.btn-anular {
+  background-color: #f5f5f5;
+  color: #757575;
+}
+
+.btn-anular:hover {
+  background-color: #e0e0e0;
+}
+
+.btn-eliminar {
+  background-color: #ffebee;
+  color: #b71c1c;
+}
+
+.btn-eliminar:hover {
+  background-color: #ffcdd2;
+}
+
+.btn-link {
+  background-color: #e8eaf6;
+  color: #3f51b5;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-link:hover {
+  background-color: #c5cae9;
+}
+
+.btn-generar {
+  background-color: #e8f5e9;
+  color: #1b5e20;
+}
+
+.btn-generar:hover {
+  background-color: #c8e6c9;
+}
+
+/* Nuevos botones para gestión avanzada de cobros */
+.btn-plan {
+  background-color: #e1f5fe;
+  color: #0277bd;
+}
+
+.btn-plan:hover {
+  background-color: #b3e5fc;
+}
+
+.btn-recordatorio {
+  background-color: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.btn-recordatorio:hover {
+  background-color: #e1bee7;
+}
+
+.badge-plan-pago {
+  margin-left: 5px;
+  font-size: 0.9rem;
+  cursor: help;
+}
+
+/* Estilos para estadísticas (versión sin gráficos) */
+.estadisticas-card {
+  flex: 1;
+  min-width: 300px;
+  padding: 16px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  margin-bottom: 20px;
+}
+
+.estadisticas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.estadistica-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.estadistica-label {
+  font-weight: 500;
+  color: #555;
+}
+
+.estadistica-valor {
+  font-weight: 600;
+  color: #333;
+}
+
+.graficos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.tabla-dashboard {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.tabla-dashboard th,
+.tabla-dashboard td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.tabla-dashboard th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+  color: #555;
+}
+
+.tabla-dashboard .monto {
+  text-align: right;
+  font-weight: 600;
+}
+
+.tabla-scroll {
+  overflow-x: auto;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.empty-table {
+  text-align: center;
+  color: #999;
+  padding: 20px 0;
+}
+
+.tabla-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.tabla-card h3 {
+  margin: 0;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+}
+
+.dias-restantes {
+  display: inline-block;
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.kpi-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.kpi-card {
+  flex: 1;
+  min-width: 200px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.kpi-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.kpi-valor {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #343a40;
+  margin-bottom: 5px;
+}
+
+.kpi-detalle {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.kpi-card.alerta .kpi-valor {
+  color: #e74c3c;
+}
+
+.kpi-card.warning .kpi-valor {
+  color: #f39c12;
+}
+
+.kpi-card.info .kpi-valor {
+  color: #3498db;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filtros-periodo {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-periodo {
+  padding: 8px 12px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-periodo.activo {
+  background-color: #2a3f54;
+  color: white;
+  border-color: #2a3f54;
+}

@@ -1,0 +1,150 @@
+/* Estilos específicos para los botones de navegación del calendario */
+.rbc-toolbar {
+  position: relative !important;
+  z-index: 1000 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 15px !important;
+  padding: 10px !important;
+  background: #fff !important;
+  border-bottom: 1px solid #eaeaea !important;
+}
+
+.rbc-toolbar button {
+  color: #333;
+  display: inline-block;
+  margin: 0 2px;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.5;
+  transition: all 0.3s;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  min-width: 40px;
+  pointer-events: auto !important;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.rbc-toolbar button:hover {
+  background-color: #f4f4f4;
+  border-color: #adadad;
+}
+
+.rbc-toolbar button.rbc-active {
+  background-color: #2a3f54;
+  color: white;
+  border-color: #2a3f54;
+}
+
+.rbc-toolbar button.rbc-active:hover {
+  background-color: #1c2b3a;
+}
+
+.rbc-toolbar-label {
+  flex-grow: 1 !important;
+  text-align: center !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+}
+
+/* Estilos para la navegación entre meses/semanas */
+.rbc-btn-group {
+  display: inline-flex !important;
+  position: relative !important;
+  z-index: 1001 !important;
+}
+
+.rbc-btn-group button {
+  position: relative !important;
+  z-index: 1002 !important;
+  margin: 0 2px !important;
+  padding: 8px 12px !important;
+  background-color: #fff !important;
+  border: 1px solid #d9d9d9 !important;
+  border-radius: 4px !important;
+  transition: all 0.3s !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  text-align: center !important;
+  outline: 0 !important;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015) !important;
+  pointer-events: auto !important;
+}
+
+.rbc-btn-group button:hover {
+  color: #1890ff !important;
+  border-color: #1890ff !important;
+}
+
+.rbc-btn-group button.rbc-active {
+  color: #fff !important;
+  background-color: #1890ff !important;
+  border-color: #1890ff !important;
+}
+
+/* Estilos para los botones específicos */
+.rbc-btn-group button:first-child,
+.rbc-btn-group button:last-child {
+  border-radius: 4px;
+}
+
+/* Corrige espaciado entre botones */
+.rbc-btn-group > button + button {
+  margin-left: -1px;
+}
+
+/* Mejoras adicionales para la visualización del calendario */
+.rbc-calendar {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Asegura que los eventos sean completamente visibles */
+.rbc-event {
+  min-height: 20px;
+  z-index: 1;
+}
+
+/* Estilos para mejorar los eventos */
+.rbc-event-content {
+  font-size: 0.85rem;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+/* Ajustes para la vista de agenda */
+.rbc-agenda-view table.rbc-agenda-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.rbc-agenda-view table.rbc-agenda-table thead > tr > th {
+  padding: 8px;
+  font-weight: 500;
+}
+
+/* Redefinir botones específicos para asegurar que sean clickeables */
+.rbc-btn-group button.rbc-btn-group__today-button,
+.rbc-btn-group button.rbc-btn-group__month-button,
+.rbc-btn-group button.rbc-btn-group__week-button,
+.rbc-btn-group button.rbc-btn-group__day-button,
+.rbc-btn-group button.rbc-btn-group__agenda-button,
+.rbc-btn-group button.rbc-btn-group__prev-button,
+.rbc-btn-group button.rbc-btn-group__next-button {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 100;
+}

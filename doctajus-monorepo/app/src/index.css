@@ -1,0 +1,309 @@
+/* Archivo principal de estilos que importa todos los módulos CSS */
+
+/* Importar variables y utilidades primero */
+@import './styles/utils/variables.css';
+@import './styles/utils/animations.css';
+@import './styles/utils/responsive.css';
+
+/* Importar estilos de layout */
+@import './styles/layout/layout.css';
+
+/* Importar componentes */
+@import './styles/components/sidebar.css';
+@import './styles/components/header.css';
+@import './styles/components/buttons.css';
+@import './styles/components/forms.css';
+@import './styles/components/cards.css';
+@import './styles/components/tables.css';
+@import './styles/components/modals.css';
+@import './styles/components/calendar.css';
+
+/* Estilos de accesibilidad */
+@import './styles/accessibility.css';
+
+/* Reset completo para arreglar problemas de layout */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Forzar el layout del sidebar */
+.app-sidebar {
+  position: fixed !important;
+  left: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 260px !important;
+  z-index: 9999 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+.app-sidebar.collapsed {
+  width: 80px !important;
+}
+
+/* Forzar el layout del contenido principal */
+.main-content-container {
+  margin-left: 260px !important;
+  width: calc(100% - 260px) !important;
+  min-height: 100vh !important;
+  position: relative !important;
+}
+
+.main-content-container.sidebar-collapsed {
+  margin-left: 80px !important;
+  width: calc(100% - 80px) !important;
+}
+
+/* Anular estilos de Ant Design */
+.ant-layout,
+.ant-layout-sider,
+.ant-layout-content,
+.ant-layout-header {
+  background: transparent !important;
+  position: static !important;
+  z-index: auto !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Asegurar que nada del contenido se oculte */
+.ant-layout-content {
+  overflow: visible !important;
+  min-height: 100vh !important;
+}
+
+@media (max-width: 768px) {
+  .main-content-container,
+  .main-content-container.sidebar-collapsed {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+}
+
+/* Estilos globales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-default);
+  line-height: var(--line-height-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Estilos de tipografía base */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-primary);
+}
+
+h1 { font-size: var(--font-size-xxxl); }
+h2 { font-size: var(--font-size-xxl); }
+h3 { font-size: var(--font-size-xl); }
+h4 { font-size: var(--font-size-lg); }
+h5 { font-size: var(--font-size-md); }
+h6 { font-size: var(--font-size-sm); }
+
+p {
+  margin-bottom: var(--spacing-md);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-normal);
+}
+
+a:hover {
+  color: var(--color-primary-light);
+}
+
+/* Utilidades comunes */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+.text-primary { color: var(--color-primary); }
+.text-success { color: var(--color-success); }
+.text-warning { color: var(--color-warning); }
+.text-danger { color: var(--color-error); }
+.text-muted { color: var(--color-text-secondary); }
+
+.bg-primary { background-color: var(--color-primary); }
+.bg-success { background-color: var(--color-success); }
+.bg-warning { background-color: var(--color-warning); }
+.bg-danger { background-color: var(--color-error); }
+.bg-light { background-color: var(--color-bg-light); }
+
+.m-0 { margin: 0; }
+.m-1 { margin: var(--spacing-xs); }
+.m-2 { margin: var(--spacing-sm); }
+.m-3 { margin: var(--spacing-md); }
+.m-4 { margin: var(--spacing-lg); }
+.m-5 { margin: var(--spacing-xl); }
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
+.mt-4 { margin-top: var(--spacing-lg); }
+.mt-5 { margin-top: var(--spacing-xl); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+.mb-5 { margin-bottom: var(--spacing-xl); }
+
+.p-0 { padding: 0; }
+.p-1 { padding: var(--spacing-xs); }
+.p-2 { padding: var(--spacing-sm); }
+.p-3 { padding: var(--spacing-md); }
+.p-4 { padding: var(--spacing-lg); }
+.p-5 { padding: var(--spacing-xl); }
+
+.d-flex { display: flex; }
+.flex-column { flex-direction: column; }
+.flex-row { flex-direction: row; }
+.justify-content-center { justify-content: center; }
+.justify-content-between { justify-content: space-between; }
+.justify-content-end { justify-content: flex-end; }
+.align-items-center { align-items: center; }
+.align-items-start { align-items: flex-start; }
+.align-items-end { align-items: flex-end; }
+
+.w-100 { width: 100%; }
+.h-100 { height: 100%; }
+
+.rounded { border-radius: var(--border-radius-md); }
+.shadow { box-shadow: var(--shadow-md); }
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+
+.overflow-hidden { overflow: hidden; }
+.overflow-auto { overflow: auto; }
+
+/* Sobreescribir algunos estilos de Ant Design a nivel global */
+.ant-btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.ant-btn-primary:hover, .ant-btn-primary:focus {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.ant-radio-checked .ant-radio-inner {
+  border-color: var(--color-primary);
+}
+
+.ant-radio-inner::after {
+  background-color: var(--color-primary);
+}
+
+.ant-switch-checked {
+  background-color: var(--color-primary);
+}
+
+.ant-pagination-item-active {
+  border-color: var(--color-primary);
+}
+
+.ant-pagination-item-active a {
+  color: var(--color-primary);
+}
+
+.ant-select-focused .ant-select-selector,
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  border-color: var(--color-primary);
+}
+
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: rgba(24, 144, 255, 0.1);
+}
+
+/* Estilos específicos para móviles */
+@media (max-width: 576px) {
+  html, body {
+    font-size: 14px;
+  }
+
+  h1 { font-size: 24px; }
+  h2 { font-size: 20px; }
+  h3 { font-size: 18px; }
+  h4 { font-size: 16px; }
+  h5 { font-size: 14px; }
+  h6 { font-size: 12px; }
+}
+
+/* Solución definitiva para el problema del sidebar */
+.app-root-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Eliminar todos los posicionamientos problemáticos */
+.ant-layout,
+.ant-layout-header,
+.ant-layout-sider,
+.ant-layout-sider-children,
+.ant-layout-content {
+  position: static !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Eliminar transformaciones que puedan causar problemas */
+* {
+  transform: none !important;
+}
+
+/* Forzar el orden de apilamiento correcto (z-index) */
+.app-root-container > aside {
+  z-index: 1 !important;
+}
+
+.app-root-container > div {
+  z-index: 2 !important;
+}
+
+.ant-modal,
+.ant-drawer,
+.ant-message,
+.ant-notification {
+  z-index: 1050 !important;
+}

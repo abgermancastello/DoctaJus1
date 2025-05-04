@@ -1,0 +1,111 @@
+/* Estilos para formularios */
+
+/* Estilos generales de formularios */
+.form-container {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.form-title {
+  margin-bottom: 24px;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.form-section {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.form-section-title {
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+/* Estilos para campos de formulario */
+.form-item-label {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.form-item-required::before {
+  display: inline-block;
+  margin-right: 4px;
+  color: #ff4d4f;
+  font-size: 14px;
+  font-family: SimSun, sans-serif;
+  line-height: 1;
+  content: '*';
+}
+
+.form-item-description {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.45);
+  margin-top: 2px;
+}
+
+/* Estilos para errores en formularios */
+.form-item-error .ant-input,
+.form-item-error .ant-select-selector,
+.form-item-error .ant-picker {
+  border-color: #ff4d4f !important;
+}
+
+.form-error-message {
+  color: #ff4d4f;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Estilos para validación en tiempo real */
+.form-item-validating .ant-input,
+.form-item-validating .ant-select-selector,
+.form-item-validating .ant-picker {
+  border-color: #1890ff !important;
+}
+
+/* Estilos para campos de formulario con éxito */
+.form-item-success .ant-input,
+.form-item-success .ant-select-selector,
+.form-item-success .ant-picker {
+  border-color: #52c41a !important;
+}
+
+/* Estilos para botones de formulario */
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+  gap: 12px;
+}
+
+/* Estilos para campos deshabilitados */
+.ant-input[disabled],
+.ant-select-disabled .ant-select-selector,
+.ant-checkbox-disabled + span,
+.ant-radio-disabled + span,
+.ant-picker-disabled {
+  color: rgba(0, 0, 0, 0.25) !important;
+  background-color: #f5f5f5 !important;
+}
+
+/* Estilos para placeholder */
+.ant-input::placeholder,
+.ant-select-selection-placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+/* Transiciones suaves para estados de formulario */
+.ant-input,
+.ant-select-selector,
+.ant-checkbox + span,
+.ant-radio + span,
+.ant-picker {
+  transition: all 0.3s;
+}

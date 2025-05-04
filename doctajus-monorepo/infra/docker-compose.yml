@@ -1,0 +1,154 @@
+services:
+  # Base de datos principal
+  postgres:
+    image: postgres:15-alpine
+    container_name: doctajus-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-doctajus}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-doctajuspass}
+      POSTGRES_DB: ${POSTGRES_DB:-doctajus}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U doctajus"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - doctajus-network
+
+  # Interfaz de administración para PostgreSQL
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: doctajus-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-admin@doctajus.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - postgres
+    networks:
+      - doctajus-network
+
+  # Caché y colas
+  redis:
+    image: redis:7-alpine
+    container_name: doctajus-redis
+    restart: always
+    command: redis-server --requirepass ${REDIS_PASSWORD:-redispass}
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - doctajus-network
+
+  # Almacenamiento de archivos (S3 compatible)
+  minio:
+    image: quay.io/minio/minio:latest
+    container_name: doctajus-minio
+    restart: always
+    ports:
+      - "9000:9000"  # API
+      - "9001:9001"  # Console
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-miniouser}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-miniopass}
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    networks:
+      - doctajus-network
+
+  # Autenticación y autorización
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: doctajus-keycloak
+    restart: always
+    environment:
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN:-admin}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD:-admin}
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres:5432/keycloak
+      KC_DB_USERNAME: ${POSTGRES_USER:-doctajus}
+      KC_DB_PASSWORD: ${POSTGRES_PASSWORD:-doctajuspass}
+    ports:
+      - "8080:8080"
+    command: start-dev
+    depends_on:
+      - postgres
+    networks:
+      - doctajus-network
+
+  # API Backend
+  nest-backend:
+    build:
+      context: ../api/nest-backend
+      dockerfile: Dockerfile.dev
+    container_name: doctajus-backend
+    restart: always
+    ports:
+      - "3001:3001"
+    environment:
+      NODE_ENV: development
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: ${POSTGRES_USER:-doctajus}
+      DATABASE_PASSWORD: ${POSTGRES_PASSWORD:-doctajuspass}
+      DATABASE_NAME: ${POSTGRES_DB:-doctajus}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-redispass}
+      JWT_SECRET: ${JWT_SECRET:-your-jwt-secret-key}
+    volumes:
+      - ../api/nest-backend:/app
+      - /app/node_modules
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - doctajus-network
+
+  # Servicio de IA
+  ia-service:
+    build:
+      context: ../api/ia-service
+      dockerfile: Dockerfile.dev
+    container_name: doctajus-ia
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-your-openai-api-key}
+      PINECONE_API_KEY: ${PINECONE_API_KEY:-your-pinecone-api-key}
+      DATABASE_URL: postgres://${POSTGRES_USER:-doctajus}:${POSTGRES_PASSWORD:-doctajuspass}@postgres:5432/${POSTGRES_DB:-doctajus}
+    volumes:
+      - ../api/ia-service:/app
+    depends_on:
+      - postgres
+    networks:
+      - doctajus-network
+
+networks:
+  doctajus-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:
+  minio_data:
+  pgadmin_data:
+

@@ -1,0 +1,144 @@
+/* Estilos para el sidebar mejorado */
+.app-sidebar {
+  border-right: 1px solid #f0f0f0;
+}
+
+.sidebar-header {
+  height: 64px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 8px;
+}
+
+.sidebar-logo {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1890ff;
+  letter-spacing: -0.5px;
+}
+
+.sidebar-toggle {
+  font-size: 16px;
+}
+
+/* Estilos para sección de favoritos */
+.favorites-section {
+  margin-bottom: 8px;
+}
+
+.section-title {
+  padding: 12px 24px 4px;
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 12px;
+}
+
+.favorites-menu {
+  border-right: none !important;
+}
+
+/* Estilos para el menú de categorías */
+.category-menu {
+  padding: 8px 0;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 8px;
+}
+
+.category-item {
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.65);
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.category-item:hover {
+  color: #1890ff;
+  background-color: rgba(24, 144, 255, 0.1);
+}
+
+.category-item-active {
+  color: #1890ff;
+  background-color: rgba(24, 144, 255, 0.1);
+  font-weight: 500;
+}
+
+.category-label {
+  margin-left: 12px;
+  font-size: 14px;
+}
+
+.category-indicator {
+  position: absolute;
+  right: 16px;
+  font-size: 12px;
+}
+
+/* Estilos para ítems del menú mejorados */
+.menu-item {
+  margin: 4px 0;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.menu-item-active {
+  background-color: rgba(24, 144, 255, 0.1) !important;
+  color: #1890ff !important;
+  border-right: 3px solid #1890ff !important;
+}
+
+.menu-item:hover .favorite-btn,
+.menu-item:focus .favorite-btn {
+  opacity: 1;
+}
+
+.menu-item-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.menu-item-text {
+  flex: 1;
+}
+
+.favorite-btn {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.menu-item:hover .favorite-btn {
+  opacity: 1;
+}
+
+/* Estilos para el main menu */
+.main-menu {
+  border-right: none !important;
+}
+
+/* Estilos para el footer */
+.sidebar-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  border-top: 1px solid #f0f0f0;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+}
+
+.copyright {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

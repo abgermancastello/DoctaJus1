@@ -1,0 +1,429 @@
+/* Estilos de accesibilidad para DoctaJus */
+
+/* === Tamaños de texto === */
+.text-size-normal {
+  --font-size-base: 16px;
+  --font-size-sm: 14px;
+  --font-size-xs: 12px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+  --line-height-normal: 1.5;
+}
+
+.text-size-large {
+  --font-size-base: 18px;
+  --font-size-sm: 16px;
+  --font-size-xs: 14px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 28px;
+  --font-size-3xl: 34px;
+  --line-height-normal: 1.6;
+}
+
+.text-size-xlarge {
+  --font-size-base: 20px;
+  --font-size-sm: 18px;
+  --font-size-xs: 16px;
+  --font-size-lg: 24px;
+  --font-size-xl: 28px;
+  --font-size-2xl: 32px;
+  --font-size-3xl: 38px;
+  --line-height-normal: 1.7;
+}
+
+/* Aplicar tamaños de texto a elementos */
+.text-size-large body,
+.text-size-xlarge body {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+}
+
+.text-size-large h1,
+.text-size-xlarge h1 {
+  font-size: var(--font-size-3xl);
+}
+
+.text-size-large h2,
+.text-size-xlarge h2 {
+  font-size: var(--font-size-2xl);
+}
+
+.text-size-large h3,
+.text-size-xlarge h3 {
+  font-size: var(--font-size-xl);
+}
+
+.text-size-large button,
+.text-size-xlarge button {
+  font-size: var(--font-size-base);
+}
+
+.text-size-large input,
+.text-size-large select,
+.text-size-large textarea,
+.text-size-xlarge input,
+.text-size-xlarge select,
+.text-size-xlarge textarea {
+  font-size: var(--font-size-base);
+}
+
+/* === Tema de alto contraste === */
+.high-contrast-theme {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #eeeeee;
+  --color-text-primary: #000000;
+  --color-text-secondary: #333333;
+  --color-border: #000000;
+  --color-focus: #0066cc;
+  --color-link: #0000ee;
+  --color-link-visited: #551a8b;
+  --color-button-bg: #000000;
+  --color-button-text: #ffffff;
+  --color-input-border: #000000;
+}
+
+.high-contrast-theme button {
+  background-color: var(--color-button-bg) !important;
+  color: var(--color-button-text) !important;
+  border: 2px solid var(--color-border) !important;
+}
+
+.high-contrast-theme a {
+  color: var(--color-link) !important;
+  text-decoration: underline !important;
+}
+
+.high-contrast-theme a:visited {
+  color: var(--color-link-visited) !important;
+}
+
+.high-contrast-theme input,
+.high-contrast-theme select,
+.high-contrast-theme textarea {
+  border: 2px solid var(--color-input-border) !important;
+  background-color: var(--color-bg-primary) !important;
+  color: var(--color-text-primary) !important;
+}
+
+.high-contrast-theme .ant-card {
+  border: 2px solid var(--color-border) !important;
+}
+
+.high-contrast-theme .ant-table-thead > tr > th {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.high-contrast-theme .ant-tag {
+  border: 1px solid #000000 !important;
+}
+
+/* === Reducción de movimiento === */
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* === Optimización para lectores de pantalla === */
+.screen-reader-mode .sr-only {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  clip: auto !important;
+  white-space: normal !important;
+  border: 0 !important;
+}
+
+.screen-reader-mode [aria-hidden="true"] {
+  display: none !important;
+}
+
+.screen-reader-mode a:focus,
+.screen-reader-mode button:focus,
+.screen-reader-mode input:focus,
+.screen-reader-mode select:focus,
+.screen-reader-mode textarea:focus {
+  outline: 3px solid #0066cc !important;
+  outline-offset: 2px !important;
+}
+
+/* Clase de ayuda para textos que solo deben ser visibles por lectores de pantalla */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Skip links para navegación con teclado */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 9999;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Estilos para accesibilidad */
+
+/* Alto contraste */
+.high-contrast {
+  --color-text-primary: #000000 !important;
+  --color-text-secondary: #333333 !important;
+  --color-background-default: #ffffff !important;
+  --color-border-light: #000000 !important;
+  --color-link: #0000EE !important;
+  --color-link-visited: #551A8B !important;
+}
+
+html.high-contrast {
+  filter: contrast(1.2);
+}
+
+.high-contrast .ant-card,
+.high-contrast .ant-table,
+.high-contrast .ant-modal-content,
+.high-contrast .ant-drawer-content {
+  background-color: #ffffff !important;
+  border: 1px solid #000000 !important;
+}
+
+.high-contrast .ant-table-thead > tr > th {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.high-contrast .ant-table-tbody > tr:nth-child(even) {
+  background-color: #f0f0f0 !important;
+}
+
+.high-contrast .ant-table-row:hover > td {
+  background-color: #dcdcdc !important;
+}
+
+.high-contrast .ant-btn {
+  border: 2px solid #000000 !important;
+}
+
+.high-contrast .ant-btn-primary {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.high-contrast .ant-btn-default {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.high-contrast .ant-tag {
+  border: 1px solid #000000 !important;
+}
+
+.high-contrast a {
+  color: #0000EE !important;
+  text-decoration: underline !important;
+}
+
+.high-contrast a:visited {
+  color: #551A8B !important;
+}
+
+.high-contrast .ant-input,
+.high-contrast .ant-select-selector {
+  border: 2px solid #000000 !important;
+}
+
+.high-contrast .ant-input:focus,
+.high-contrast .ant-select-focused .ant-select-selector {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Texto grande */
+.large-text {
+  font-size: 1.2rem !important;
+}
+
+html.large-text {
+  font-size: 18px !important;
+}
+
+.large-text .ant-typography h1 {
+  font-size: 2.5rem !important;
+}
+
+.large-text .ant-typography h2 {
+  font-size: 2rem !important;
+}
+
+.large-text .ant-typography h3 {
+  font-size: 1.75rem !important;
+}
+
+.large-text .ant-typography h4 {
+  font-size: 1.5rem !important;
+}
+
+.large-text .ant-typography p,
+.large-text .ant-form-item-label label,
+.large-text .ant-input,
+.large-text .ant-btn,
+.large-text .ant-select-selection-item,
+.large-text .ant-table {
+  font-size: 1.2rem !important;
+}
+
+.large-text .ant-table th,
+.large-text .ant-table td {
+  padding: 16px 12px !important;
+}
+
+.large-text .ant-btn {
+  padding: 8px 16px !important;
+  height: auto !important;
+}
+
+.large-text .ant-form-item {
+  margin-bottom: 24px !important;
+}
+
+.large-text .ant-input {
+  padding: 8px 12px !important;
+  height: auto !important;
+}
+
+/* Navegación por teclado */
+.keyboard-navigation *:focus {
+  outline: 3px solid #1890ff !important;
+  outline-offset: 2px !important;
+}
+
+.keyboard-navigation .ant-btn:focus,
+.keyboard-navigation .ant-input:focus,
+.keyboard-navigation .ant-select-focused .ant-select-selector {
+  box-shadow: 0 0 0 3px rgba(24, 144, 255, 0.5) !important;
+}
+
+/* Reducción de movimiento */
+.reduced-motion *,
+html.reduced-motion * {
+  animation-duration: 0.001s !important;
+  transition-duration: 0.001s !important;
+}
+
+/* Componentes específicos */
+.high-contrast .evento-container {
+  border: 2px solid #000000 !important;
+}
+
+.large-text .evento-container {
+  padding: 10px !important;
+}
+
+.evento-container .evento-titulo {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.large-text .evento-tipo {
+  font-size: 1rem !important;
+  padding: 2px 8px !important;
+}
+
+/* Alertas y notificaciones accesibles */
+.high-contrast .ant-alert {
+  border: 2px solid !important;
+}
+
+.high-contrast .ant-alert-success {
+  background-color: #f0fff0 !important;
+  border-color: #006400 !important;
+}
+
+.high-contrast .ant-alert-error {
+  background-color: #fff0f0 !important;
+  border-color: #8b0000 !important;
+}
+
+.high-contrast .ant-alert-warning {
+  background-color: #fffacd !important;
+  border-color: #b8860b !important;
+}
+
+.high-contrast .ant-alert-info {
+  background-color: #f0f8ff !important;
+  border-color: #00008b !important;
+}
+
+/* Calendario específico */
+.high-contrast .rbc-event {
+  border: 2px solid #000000 !important;
+}
+
+.large-text .rbc-event {
+  padding: 8px !important;
+}
+
+.large-text .rbc-toolbar button {
+  padding: 12px !important;
+  font-size: 1.2rem !important;
+}
+
+.high-contrast .rbc-off-range-bg {
+  background-color: #e6e6e6 !important;
+}
+
+.high-contrast .rbc-today {
+  background-color: #fffacd !important;
+}
+
+/* Skip links para navegación por teclado */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000000;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Tarjetas de expedientes y tareas accesibles */
+.high-contrast .ant-card-actions {
+  background-color: #f0f0f0 !important;
+  border-top: 2px solid #000000 !important;
+}
+
+.large-text .ant-card-meta-title {
+  font-size: 1.4rem !important;
+}
+
+.large-text .ant-card-meta-description {
+  font-size: 1.1rem !important;
+}

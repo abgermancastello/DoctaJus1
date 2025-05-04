@@ -1,0 +1,52 @@
+/* Estilos para la página de permisos */
+.permisos-container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.permisos-content {
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+}
+
+.permisos-header {
+  margin-bottom: 24px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 16px;
+}
+
+.permisos-form {
+  width: 100%;
+}
+
+/* Asegurar que los elementos del formulario ocupen el ancho adecuado */
+.permisos-form .ant-form-item {
+  width: 100%;
+}
+
+/* Arreglar el problema del z-index */
+.permisos-form .ant-form-item-control-input {
+  z-index: auto !important;
+}
+
+/* Asegurar que los inputs tengan el tamaño correcto */
+.permisos-form .ant-input,
+.permisos-form .ant-input-affix-wrapper,
+.permisos-form .ant-select-selector {
+  width: 100% !important;
+}
+
+/* Forzar que los elementos sean visibles por encima del sidebar */
+.permisos-form .ant-form-item-control {
+  position: relative;
+  z-index: 1;
+}
+
+/* Asegurar que todos los elementos son visibles */
+.permisos-container * {
+  z-index: auto !important;
+}

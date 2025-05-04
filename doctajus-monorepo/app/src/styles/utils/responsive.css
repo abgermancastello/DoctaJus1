@@ -1,0 +1,100 @@
+/* Estilos responsivos para diferentes tamaños de pantalla */
+
+/* Media queries para tablet */
+@media (max-width: 768px) {
+  /* Ajustes para toolbar del calendario */
+  .rbc-toolbar {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  .rbc-btn-group {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .rbc-toolbar-label {
+    order: -1 !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Ajustes para layout principal */
+  .app-content {
+    margin-left: 0 !important;
+    transition: margin-left 0.3s !important;
+  }
+
+  /* Modificaciones para el sidebar */
+  .app-sidebar.ant-layout-sider-collapsed + .app-content {
+    margin-left: 0 !important;
+  }
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 576px) {
+  /* Ajustes específicos para calendario */
+  .rbc-toolbar {
+    flex-direction: column;
+    padding: 5px;
+  }
+
+  .rbc-toolbar-label {
+    margin: 8px 0;
+    font-size: 16px;
+  }
+
+  .rbc-btn-group {
+    margin: 4px 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .rbc-btn-group button {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  /* Ajustes para componentes principales */
+  .ant-card {
+    margin-bottom: 12px;
+  }
+
+  .ant-table {
+    font-size: 12px;
+  }
+
+  /* Ajustes para headers y contenido */
+  .ant-layout-header {
+    padding: 0 12px;
+    height: 50px;
+  }
+
+  .ant-layout-content {
+    margin: 12px 8px !important;
+    padding: 12px !important;
+  }
+}
+
+/* Media queries para dispositivos muy pequeños */
+@media (max-width: 375px) {
+  .ant-btn {
+    padding: 0 8px;
+    font-size: 12px;
+  }
+
+  .ant-input {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .ant-table {
+    font-size: 11px;
+  }
+
+  .ant-pagination-item {
+    min-width: 28px;
+    height: 28px;
+    line-height: 28px;
+  }
+}
