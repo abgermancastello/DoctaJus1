@@ -1,0 +1,10 @@
+# Variables de entorno de ejemplo
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=mydatabase
+DB_USER=myuser
+DB_PASSWORD=mypassword
+
+# Configuración de la aplicación
+APP_PORT=3000
+APP_ENV=development

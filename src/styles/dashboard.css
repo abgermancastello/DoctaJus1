@@ -1,0 +1,462 @@
+/* Variables de color */
+:root {
+  --primary-color: #1890ff;
+  --success-color: #52c41a;
+  --warning-color: #faad14;
+  --danger-color: #ff4d4f;
+  --text-primary: #262626;
+  --text-secondary: #595959;
+  --text-disabled: #bfbfbf;
+  --border-color: #f0f0f0;
+  --bg-light: #fafafa;
+  --bg-white: #ffffff;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
+/* Variables de color para el tema oscuro */
+[data-theme="dark"] {
+  --primary-color: #177ddc;
+  --success-color: #49aa19;
+  --warning-color: #d89614;
+  --danger-color: #a61d24;
+  --text-primary: #ffffff;
+  --text-secondary: #a6a6a6;
+  --text-disabled: #595959;
+  --border-color: #303030;
+  --bg-light: #141414;
+  --bg-white: #1f1f1f;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para el Dashboard Personalizable */
+.dashboard-personalizable {
+  width: 100%;
+  padding: 24px;
+  background: transparent;
+}
+
+/* Estilos para contenedor de dashboard */
+.dashboard-page {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para las pestañas */
+.dashboard-tabs .ant-tabs-nav {
+  margin-bottom: 24px;
+  background: var(--bg-light);
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.dashboard-tabs .ant-tabs-tab {
+  padding: 0.75rem 1.5rem;
+  margin: 0 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.dashboard-tabs .ant-tabs-tab-active {
+  background: var(--primary-color);
+  border-radius: 6px;
+}
+
+.dashboard-tabs .ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: white !important;
+}
+
+.dashboard-tabs .ant-badge-count {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  box-shadow: none;
+}
+
+/* Estilos para los widgets */
+.widget-container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+}
+
+.widget-container:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Estilos para el modal de configuración */
+.widget-config-modal .ant-modal-content {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.widget-config-modal .ant-modal-header {
+  background: var(--bg-light);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem;
+}
+
+.widget-config-modal .ant-modal-body {
+  padding: 1.5rem;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.widget-config-item {
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.widget-config-item:hover {
+  background: var(--bg-light);
+  border-color: var(--primary-color);
+}
+
+/* Estilos para el drag handle */
+.drag-handle {
+  cursor: move;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.drag-handle:hover {
+  color: var(--primary-color);
+  background: var(--bg-light);
+}
+
+/* Estilos para widgets deshabilitados */
+.widget-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  background: var(--bg-light);
+}
+
+/* Animaciones para widgets */
+@keyframes widgetAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.widget-container {
+  animation: widgetAppear 0.4s ease-out;
+}
+
+/* Estilos para el encabezado */
+.dashboard-header {
+  margin-bottom: 24px;
+}
+
+.dashboard-header h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* Estilos para el botón de configuración */
+.config-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: var(--primary-color);
+  border: none;
+  color: white;
+}
+
+.config-button:hover {
+  background: #40a9ff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Estilos para el estado vacío */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--bg-white);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.empty-state-icon {
+  font-size: 3.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.empty-state-text {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* Estilos responsivos */
+@media (max-width: 1200px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-personalizable {
+    padding: 16px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Estilos para tooltips */
+.help-tooltip {
+  cursor: help;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  padding: 0.25rem;
+  border-radius: 4px;
+}
+
+.help-tooltip:hover {
+  color: var(--primary-color);
+  background: var(--bg-light);
+}
+
+/* Estilos para badges de categoría */
+.category-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.category-urgente {
+  background: rgba(255, 77, 79, 0.1);
+  color: var(--danger-color);
+  border: 1px solid rgba(255, 77, 79, 0.2);
+}
+
+.category-importante {
+  background: rgba(250, 173, 20, 0.1);
+  color: var(--warning-color);
+  border: 1px solid rgba(250, 173, 20, 0.2);
+}
+
+.category-general {
+  background: rgba(24, 144, 255, 0.1);
+  color: var(--primary-color);
+  border: 1px solid rgba(24, 144, 255, 0.2);
+}
+
+/* Ajustes para el tema oscuro */
+[data-theme="dark"] .dashboard-tabs .ant-tabs-tab {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .dashboard-tabs .ant-tabs-tab:hover {
+  color: white;
+}
+
+[data-theme="dark"] .category-urgente {
+  background: rgba(255, 77, 79, 0.2);
+  color: #ff7875;
+  border-color: rgba(255, 77, 79, 0.3);
+}
+
+[data-theme="dark"] .category-importante {
+  background: rgba(250, 173, 20, 0.2);
+  color: #ffc53d;
+  border-color: rgba(250, 173, 20, 0.3);
+}
+
+[data-theme="dark"] .category-general {
+  background: rgba(24, 144, 255, 0.2);
+  color: #69c0ff;
+  border-color: rgba(24, 144, 255, 0.3);
+}
+
+[data-theme="dark"] .theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Ajustes generales y para los componentes en relación con el sidebar */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 90;
+  background: white;
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: var(--shadow-md);
+}
+
+.theme-toggle .ant-switch {
+  min-width: 40px;
+}
+
+.theme-toggle .ant-switch-checked {
+  background: #1890ff;
+}
+
+/* Asegurando que el contenido no se muestre debajo del sidebar */
+.site-layout {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.3s ease;
+}
+
+.ant-layout-sider-collapsed + .site-layout {
+  margin-left: 80px;
+  width: calc(100% - 80px);
+}
+
+/* Fix específico para el layout de Ant Design */
+.ant-layout {
+  background: var(--bg-light) !important;
+}
+
+.ant-layout-content {
+  overflow: visible !important;
+}
+
+/* Clase de ayuda para solucionar problemas de contenido */
+.content-fixed {
+  width: 100% !important;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+/* Estilos para la visualización de widgets en diferentes tamaños de pantalla */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+/* Ajustes para los módulos individuales */
+.dashboard-module {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Contenedor principal del dashboard */
+.dashboard-wrapper {
+  width: 100%;
+  min-height: 100%;
+  background: #f0f2f5;
+}
+
+/* Grid de widgets */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+/* Widgets individuales */
+.widget-container {
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.widget-container:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Header del dashboard */
+.dashboard-header {
+  margin-bottom: 24px;
+}
+
+/* Tabs del dashboard */
+.dashboard-tabs {
+  margin-top: 24px;
+}
+
+.dashboard-tabs .ant-tabs-nav {
+  margin-bottom: 24px;
+  background: var(--bg-light);
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* Media queries */
+@media (max-width: 1200px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-personalizable {
+    padding: 16px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ajustes para el layout principal */
+.site-layout {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.3s ease;
+}
+
+.ant-layout-sider-collapsed + .site-layout {
+  margin-left: 80px;
+  width: calc(100% - 80px);
+}
+
+@media (max-width: 992px) {
+  .site-layout {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* Fix para el layout principal */
+.main-content-layout {
+  position: relative !important;
+  z-index: 1;
+}
